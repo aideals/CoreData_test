@@ -16,7 +16,46 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSManagedObject *failedBankInfor = [NSEntityDescription insertNewObjectForEntityForName:@"FailedBankInfo" inManagedObjectContext:context];
+    
+    [failedBankInfor setValue:@"Test Bank" forKey:@"name"];
+    [failedBankInfor setValue:@"Testville" forKey:@"city"];
+    [failedBankInfor setValue:@"Testland" forKey:@"state"];
+    
+    NSManagedObject *failedBankDetails = [NSEntityDescription insertNewObjectForEntityForName:@"FailedBankDetails" inManagedObjectContext:context];
+    [failedBankDetails setValue:[NSData data] forKey:@"closeData"];
+    [failedBankDetails setValue:[NSData data] forKey:@"updateData"];
+    [failedBankDetails setValue:[NSNumber numberWithInt:12345] forKey:@"zip"];
+    
+    [failedBankInfor setValue:failedBankDetails forKey:@"details"];
+    [failedBankDetails setValue:failedBankInfor forKey:@"info"];
+    
+    NSError *error;
+    if (![context save:&error]) {
+        NSLog(@"Whoops,couldn't save:%@",[error localizedDescription]);
+    }
+    
+    NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"FailedBankInfo" inManagedObjectContext:context];
+    [fetch setEntity:entity];
+    NSArray *fetchedObject = [context executeFetchRequest:fetch error:&error];
+    
+    for (NSManagedObjectContext *info in fetchedObject) {
+        NSLog(@"Name:%@",[info valueForKey:@"name"]);
+        NSManagedObject *details = [info valueForKey:@"details"];
+        NSLog(@"Zip:%@",[details valueForKey:@"zip"]);
+    }
+    
+    
+                        
+    
+    
     return YES;
 }
 
