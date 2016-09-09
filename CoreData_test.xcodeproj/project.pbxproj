@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D24A6321D8050800059F2F1 /* FailedBankDetails+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D24A62B1D8050800059F2F1 /* FailedBankDetails+CoreDataProperties.m */; };
+		1D24A6331D8050800059F2F1 /* FailedBankDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D24A62D1D8050800059F2F1 /* FailedBankDetails.m */; };
+		1D24A6341D8050800059F2F1 /* FailedBankInfo+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D24A62F1D8050800059F2F1 /* FailedBankInfo+CoreDataProperties.m */; };
+		1D24A6351D8050800059F2F1 /* FailedBankInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D24A6311D8050800059F2F1 /* FailedBankInfo.m */; };
 		1D28AACA1D7EF6EA00DD8701 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D28AAC91D7EF6EA00DD8701 /* main.m */; };
 		1D28AACD1D7EF6EA00DD8701 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D28AACC1D7EF6EA00DD8701 /* AppDelegate.m */; };
 		1D28AAD61D7EF6EA00DD8701 /* CoreData_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D28AAD41D7EF6EA00DD8701 /* CoreData_test.xcdatamodeld */; };
@@ -35,6 +39,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D24A62A1D8050800059F2F1 /* FailedBankDetails+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FailedBankDetails+CoreDataProperties.h"; sourceTree = "<group>"; };
+		1D24A62B1D8050800059F2F1 /* FailedBankDetails+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FailedBankDetails+CoreDataProperties.m"; sourceTree = "<group>"; };
+		1D24A62C1D8050800059F2F1 /* FailedBankDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FailedBankDetails.h; sourceTree = "<group>"; };
+		1D24A62D1D8050800059F2F1 /* FailedBankDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FailedBankDetails.m; sourceTree = "<group>"; };
+		1D24A62E1D8050800059F2F1 /* FailedBankInfo+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FailedBankInfo+CoreDataProperties.h"; sourceTree = "<group>"; };
+		1D24A62F1D8050800059F2F1 /* FailedBankInfo+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FailedBankInfo+CoreDataProperties.m"; sourceTree = "<group>"; };
+		1D24A6301D8050800059F2F1 /* FailedBankInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FailedBankInfo.h; sourceTree = "<group>"; };
+		1D24A6311D8050800059F2F1 /* FailedBankInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FailedBankInfo.m; sourceTree = "<group>"; };
 		1D28AAC51D7EF6EA00DD8701 /* CoreData_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreData_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D28AAC91D7EF6EA00DD8701 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1D28AACB1D7EF6EA00DD8701 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -105,6 +117,14 @@
 				1D28AACC1D7EF6EA00DD8701 /* AppDelegate.m */,
 				1D28AAFE1D7EFD9F00DD8701 /* CoreDataTableViewController.h */,
 				1D28AAFF1D7EFD9F00DD8701 /* CoreDataTableViewController.m */,
+				1D24A62A1D8050800059F2F1 /* FailedBankDetails+CoreDataProperties.h */,
+				1D24A62B1D8050800059F2F1 /* FailedBankDetails+CoreDataProperties.m */,
+				1D24A62C1D8050800059F2F1 /* FailedBankDetails.h */,
+				1D24A62D1D8050800059F2F1 /* FailedBankDetails.m */,
+				1D24A62E1D8050800059F2F1 /* FailedBankInfo+CoreDataProperties.h */,
+				1D24A62F1D8050800059F2F1 /* FailedBankInfo+CoreDataProperties.m */,
+				1D24A6301D8050800059F2F1 /* FailedBankInfo.h */,
+				1D24A6311D8050800059F2F1 /* FailedBankInfo.m */,
 				1D28AAD71D7EF6EA00DD8701 /* Assets.xcassets */,
 				1D28AAD91D7EF6EA00DD8701 /* LaunchScreen.storyboard */,
 				1D28AADC1D7EF6EA00DD8701 /* Info.plist */,
@@ -272,10 +292,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D24A6351D8050800059F2F1 /* FailedBankInfo.m in Sources */,
 				1D28AAD61D7EF6EA00DD8701 /* CoreData_test.xcdatamodeld in Sources */,
+				1D24A6331D8050800059F2F1 /* FailedBankDetails.m in Sources */,
 				1D28AACD1D7EF6EA00DD8701 /* AppDelegate.m in Sources */,
 				1D28AB001D7EFD9F00DD8701 /* CoreDataTableViewController.m in Sources */,
 				1D28AACA1D7EF6EA00DD8701 /* main.m in Sources */,
+				1D24A6341D8050800059F2F1 /* FailedBankInfo+CoreDataProperties.m in Sources */,
+				1D24A6321D8050800059F2F1 /* FailedBankDetails+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +515,7 @@
 				1D28AAF71D7EF6EA00DD8701 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1D28AAF81D7EF6EA00DD8701 /* Build configuration list for PBXNativeTarget "CoreData_testTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +524,7 @@
 				1D28AAFA1D7EF6EA00DD8701 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1D28AAFB1D7EF6EA00DD8701 /* Build configuration list for PBXNativeTarget "CoreData_testUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +533,7 @@
 				1D28AAFD1D7EF6EA00DD8701 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FailedBankInfo.h"
 
 @interface CoreDataTableViewController : UITableViewController <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic,strong) NSArray *failedBankInfos;
 
 @end

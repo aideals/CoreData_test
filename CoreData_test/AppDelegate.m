@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "FailedBankInfo.h"
+#import "FailedBankDetails.h"
+
 
 @interface AppDelegate ()
 
@@ -19,22 +22,28 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    CoreDataTableViewController *cdtvc = [[CoreDataTableViewController alloc] init];
+    self.window.rootViewController = cdtvc;
+    
     [self.window makeKeyAndVisible];
     
     NSManagedObjectContext *context = [self managedObjectContext];
-    NSManagedObject *failedBankInfor = [NSEntityDescription insertNewObjectForEntityForName:@"FailedBankInfo" inManagedObjectContext:context];
+    FailedBankInfo *failedBankInfo = [NSEntityDescription insertNewObjectForEntityForName:@"FailedBankInfo" inManagedObjectContext:context];
     
-    [failedBankInfor setValue:@"Test Bank" forKey:@"name"];
-    [failedBankInfor setValue:@"Testville" forKey:@"city"];
-    [failedBankInfor setValue:@"Testland" forKey:@"state"];
+    failedBankInfo.name = @"Test Bank";
+    failedBankInfo.city = @"Testille";
+    failedBankInfo.state = @"Testland";
     
-    NSManagedObject *failedBankDetails = [NSEntityDescription insertNewObjectForEntityForName:@"FailedBankDetails" inManagedObjectContext:context];
-    [failedBankDetails setValue:[NSData data] forKey:@"closeData"];
-    [failedBankDetails setValue:[NSData data] forKey:@"updateData"];
-    [failedBankDetails setValue:[NSNumber numberWithInt:12345] forKey:@"zip"];
+    FailedBankDetails *failedBankDetails = [NSEntityDescription insertNewObjectForEntityForName:@"FailedBankDetails" inManagedObjectContext:context];
     
-    [failedBankInfor setValue:failedBankDetails forKey:@"details"];
-    [failedBankDetails setValue:failedBankInfor forKey:@"info"];
+    failedBankDetails.closeDate = [NSDate date];
+    failedBankDetails.updateDate = [NSDate date];
+    failedBankDetails.zip = [NSNumber numberWithInt:12345];
+    
+    failedBankDetails.info = failedBankInfo;
+    failedBankInfo.details = failedBankDetails;
+    
     
     NSError *error;
     if (![context save:&error]) {
@@ -46,7 +55,7 @@
     [fetch setEntity:entity];
     NSArray *fetchedObject = [context executeFetchRequest:fetch error:&error];
     
-    for (NSManagedObjectContext *info in fetchedObject) {
+    for (FailedBankDetails *info in fetchedObject) {
         NSLog(@"Name:%@",[info valueForKey:@"name"]);
         NSManagedObject *details = [info valueForKey:@"details"];
         NSLog(@"Zip:%@",[details valueForKey:@"zip"]);
